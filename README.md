@@ -1,38 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#Wordle Clone dengan Next.js dan Tailwind CSS
 
-## Getting Started
+Ini adalah kloningan aplikasi Wordle yang menggunakan Next.js dan Tailwind CSS, serta menggunakan [KBBI API](https://github.com/btrianurdin/new-kbbi-api) untuk mengambil kata-kata yang digunakan dalam permainan.
 
-First, run the development server:
+##Cara Menggunakan
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone repository ini ke komputer lokal Anda.
+2. Jalankan perintah npm install atau yarn install untuk menginstal semua dependensi.
+3. Jalankan perintah npm run dev atau yarn dev untuk memulai aplikasi di lingkungan pengembangan.
+4. Buka http://localhost:3000 pada browser web Anda.
+5. Mulai bermain dengan memasukkan kata-kata yang ingin ditebak!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##Cara Mengubah Kata-kata yang Digunakan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Kata-kata yang digunakan dalam permainan diambil dari KBBI API dan disimpan dalam file /pages/api/randomWord.ts. Anda dapat menambahkan kata-kata baru ke dalam file ini.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+##Tentang Next.js dan Tailwind CSS
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Next.js adalah kerangka kerja React yang sangat populer, yang memungkinkan pengembang web untuk membuat aplikasi web yang efisien, mudah dikelola, dan mudah diimplementasikan. Tailwind CSS, seperti yang disebutkan sebelumnya, adalah sebuah kerangka kerja CSS yang memberikan sejumlah besar kelas utilitas CSS yang dapat digunakan untuk membangun tata letak halaman web yang cepat dan efisien.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+##Kredit
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Aplikasi ini dibuat oleh [Rico Muhammad](https://github.com/ricomuh) menggunakan Next.js dan Tailwind CSS, dengan bantuan dari KBBI API. Terima kasih kepada pencipta Wordle asli, KBBI API, Next.js, dan Tailwind CSS atas sumber daya mereka.
