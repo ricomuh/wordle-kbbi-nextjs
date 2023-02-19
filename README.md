@@ -12,7 +12,7 @@ Ini adalah kloningan aplikasi Wordle yang menggunakan Next.js dan Tailwind CSS, 
 
 ## Cara Mengubah Kata-kata yang Digunakan
 
-Kata-kata yang digunakan dalam permainan diambil dari KBBI API dan disimpan dalam file /pages/api/randomWord.ts. Anda dapat menambahkan kata-kata baru ke dalam file ini.
+Kata-kata yang digunakan dalam permainan diambil dari KBBI API dan disimpan dalam file `/pages/api/randomWord.ts`. Anda dapat menambahkan kata-kata baru ke dalam file ini.
 
 ## Tentang Next.js dan Tailwind CSS
 
