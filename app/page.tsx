@@ -1,91 +1,49 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
+import { useEffect, useState } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+import Keyboard from "@/components/keyboard";
 
-export default function Home() {
+const Main = () => {
+  const [words, setWords] = useState<string[][]>([[], [], [], [], []]);
+
+  useEffect(() => {
+    // set the words state to blank 2d array 5*5
+    const setBlankWords: string[][] = [[], [], [], [], []];
+    setBlankWords.forEach((row, rowIndex) => {
+      for (let i = 0; i < 5; i++) {
+        row.push("");
+      }
+    });
+    setWords(setBlankWords);
+  }, []);
+
+  const setCharater = (row: number, column: number, character: string) => {
+    setWords((prev) => {
+      const newWords = [...prev];
+      newWords[row][column] = character;
+      return newWords;
+    });
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="min-h-screen bg-gray-100 flex justify-center items-center">
+      <div className="w-4/12 my-4 flex-col justify-between gap-10">
+        <div className="flex justify-center items-center">
+          <h1 className="text-2xl font-bold">Wordle KBBI</h1>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <div className="grid grid-cols-5 gap-4">
+          {words.map((word, index) =>
+            word.map((w, i) => (
+              <div className="border-2 border-gray-300 rounded-md aspect-square flex justify-center items-center font-bold text-2xl">
+                {w}
+              </div>
+            ))
+          )}
         </div>
+        <Keyboard setCharater={setCharater} />
       </div>
+    </div>
+  );
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Main;
