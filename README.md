@@ -5,8 +5,8 @@ Ini adalah kloningan aplikasi Wordle yang menggunakan Next.js dan Tailwind CSS, 
 ## Cara Menggunakan
 
 1. Clone repository ini ke komputer lokal Anda.
-2. Jalankan perintah npm install atau yarn install untuk menginstal semua dependensi.
-3. Jalankan perintah npm run dev atau yarn dev untuk memulai aplikasi di lingkungan pengembangan.
+2. Jalankan perintah `npm install` atau `yarn install` untuk menginstal semua dependensi.
+3. Jalankan perintah `npm run dev` atau `yarn dev` untuk memulai aplikasi di lingkungan pengembangan.
 4. Buka http://localhost:3000 pada browser web Anda.
 5. Mulai bermain dengan memasukkan kata-kata yang ingin ditebak!
 
