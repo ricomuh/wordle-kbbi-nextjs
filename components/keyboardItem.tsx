@@ -1,7 +1,7 @@
-const KeyboardItem = ({ text, onClick }: { text: string; onClick: any }) => {
+const KeyboardItem = ({ text, onClick }: { text: string; onClick?: any }) => {
   return (
     <button
-      className="bg-gray-200 rounded-md w-10 h-10 flex justify-center items-center"
+      className="bg-gray-200 rounded-md px-4 h-10 flex justify-center items-center font-semibold"
       onClick={onClick}
     >
       {text}

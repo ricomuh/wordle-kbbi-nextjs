@@ -22,6 +22,7 @@ const Keyboard = ({ setCharater }: any) => {
     "j",
     "k",
     "l",
+    "Enter",
     "z",
     "x",
     "c",
@@ -29,30 +30,20 @@ const Keyboard = ({ setCharater }: any) => {
     "b",
     "n",
     "m",
+    "Backspace",
   ];
-  const slices = [0, 10, 19, 26];
+  const slices = [0, 10, 19, 28];
 
   return (
     <div className="flex flex-col justify-center items-center gap-2">
       {slices.map((slice, index) => (
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center gap-2" key={index}>
           {keys.slice(slice, slices[index + 1]).map((char, keyIndex) => (
-            <>
-              {index === 2 && keyIndex === 0 && (
-                <button className="bg-gray-200 rounded-md px-4 h-10 flex justify-center items-center">
-                  Enter
-                </button>
-              )}
-              <KeyboardItem
-                text={char}
-                onClick={() => setCharater(index, keyIndex, char)}
-              />
-              {index === 2 && keyIndex === 6 && (
-                <button className="bg-gray-200 rounded-md px-4 h-10 flex justify-center items-center">
-                  Backspace
-                </button>
-              )}
-            </>
+            <KeyboardItem
+              text={char}
+              onClick={() => setCharater(char)}
+              key={keyIndex}
+            />
           ))}
         </div>
       ))}
